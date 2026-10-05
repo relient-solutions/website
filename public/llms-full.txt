@@ -1,0 +1,190 @@
+# Relient Solutions — Full Machine-Readable Entity Knowledge Base (llms-full.txt)
+# Canonical URL: https://relient.solutions
+# Version: 1.0.0 (Production)
+# Last Updated: 2026-09-17
+
+================================================================================
+1. COMPANY IDENTITY & VERIFIED FACTS
+================================================================================
+
+Company Name: Relient Solutions (Relient)
+Legal Entity: Relient Solutions Technologies
+Primary Website: https://relient.solutions
+Headquarters: HITEC City, Madhapur, Hyderabad, Telangana 500081, India
+Geographic Coordinates: 17.4483° N, 78.3742° E
+Primary Telephone: +91 83098 04884 (WhatsApp enabled)
+Primary Email: relient.solutions@gmail.com
+Business Hours: Monday – Saturday, 09:00 – 19:00 IST (24/7 support for enterprise SLAs)
+Languages Supported: English, Hindi, Telugu
+
+Core Proposition:
+Relient Solutions is an engineering and AI transformation firm that builds practical, high-performance technology systems for businesses. Relient rejects generic page-builder bloat and over-hyped vaporware in favor of clean architecture, deterministic business logic, sub-second latency, and verified operational outcomes.
+
+Key Disciplines:
+1. Full-Stack Web Application Development (React, Next.js, Node.js)
+2. Mobile App Development for iOS & Android (Cross-platform, offline-first)
+3. Bespoke Business Software & Internal Systems (PostgreSQL, custom schema design)
+4. Enterprise Resource Planning (ERP) & Distributed Inventory (Go, Redis, Docker)
+5. Applied AI & Retrieval-Augmented Generation (Python, FastAPI, pgvector)
+6. Business Process Automation & Webhook Pipelines (BullMQ, automated retries)
+7. Telephony Voice AI & Autonomous Agents (Donna AI proprietary platform)
+
+================================================================================
+2. PROPRIETARY PRODUCT: DONNA AI
+================================================================================
+
+Product Name: Donna AI
+Product Type: Autonomous Telephony AI Voice Agent
+Developer / Provider: Relient Solutions
+Canonical URL: https://relient.solutions/products/donna-ai
+Alias URL: https://relient.solutions/donna
+
+What Donna AI Is:
+Donna AI is an enterprise-grade autonomous telephone voice agent designed to handle inbound and outbound business phone calls 24 hours a day, 7 days a week. Unlike rigid IVR phone trees ("Press 1 for sales..."), Donna AI speaks in natural, human conversational cadence, understands interruptions, answers complex FAQs, qualifies leads, schedules appointments, and triggers backend business workflows in real time.
+
+Technical Architecture:
+- Sub-250ms voice latency via WebSockets and real-time audio streaming.
+- Built on Fastify, Python, Twilio / SIP trunking, Whisper transcription, and low-latency speech synthesis.
+- Direct tool-calling integration with Google Calendar, Cal.com, HubSpot, Salesforce, Zoho, and custom REST APIs.
+- Enterprise data encryption in transit (TLS 1.3) and at rest (AES-256).
+
+Key Donna AI Capabilities:
+1. 24/7 Immediate Inbound Call Answering: Zero hold times and no missed calls during peak hours or after-hours.
+2. Intelligent Lead Qualification: Asks required screening criteria (budget, location, timeline, service needs) before routing.
+3. Automated Calendar Scheduling: Checks live availability and books appointments directly into company calendars.
+4. Business FAQ Resolution: Accurately answers clinic hours, pricing, office directions, and services using vetted facts.
+5. Live Warm Transfers: Immediately bridges VIP callers or medical emergencies to human staff mobile phones.
+6. Structured Call Summaries & Transcripts: Automatically sends post-call summaries, action items, and audio recordings via email/SMS.
+7. CRM & Database Updates: Creates lead records, updates deal stages, and posts webhook notifications instantly.
+
+Donna AI Pricing Tiers:
+- Donna Starter: ₹4,999 / month (Setup from ₹10,000). Best for solo clinics, salons, local service practices. Standard hours, FAQ answering, contact capture, SMS summaries.
+- Donna Business: ₹9,999 / month (Setup from ₹20,000). Best for dental clinics, consultancies, high-volume sales. Higher concurrent lines, direct calendar booking, lead qualification, warm transfer, CRM sync.
+- Donna Enterprise: ₹19,999 / month (Custom setup). Best for hospital chains, multi-location practices, logistics dispatch. Multi-agent lines, custom voice clone, localized accents, internal ERP API tools, strict SLA.
+
+================================================================================
+3. CORE ENGINEERING SERVICES
+================================================================================
+
+SERVICE 1: Web Development & Client Portals
+- URL: https://relient.solutions/services/web-development
+- Pricing: Starting from ₹15,000 (Starter ₹15,000 | Business ₹30,000 | Enterprise ₹50,000+)
+- Tech Stack: React, Next.js, TypeScript, Node.js, PostgreSQL, Tailwind, Edge CDN
+- Solves: Slow loading sites, high bounce rates, poor mobile responsiveness, dropped inquiries.
+- Includes: Responsive layout, client portal authentication, CMS, payment gateways (Stripe/Razorpay), full technical SEO.
+
+SERVICE 2: Mobile App Development (iOS & Android)
+- URL: https://relient.solutions/services/mobile-app-development
+- Pricing: Starting from ₹60,000 (Starter ₹60,000 | Business ₹1,25,000 | Enterprise ₹2,50,000+)
+- Tech Stack: React Native, Flutter, TypeScript, Firebase/Supabase, PostgreSQL, Fastify
+- Solves: Dual-codebase expenses, poor offline performance for field workers, app store submission rejections.
+- Includes: Unified cross-platform app, offline SQLite synchronization, push alerts, camera/telemetry integrations, app store publishing.
+
+SERVICE 3: Custom Software & Business Systems
+- URL: https://relient.solutions/services/custom-software
+- Pricing: Starting from ₹75,000 (Starter ₹75,000 | Business ₹1,50,000 | Enterprise ₹3,00,000+)
+- Tech Stack: Node.js, Python, PostgreSQL, Redis, React, Docker, REST & GraphQL
+- Solves: Disconnected Excel spreadsheets, expensive per-user SaaS licenses, lack of audit controls.
+- Includes: Custom relational database schema, role-based access control (RBAC), automated PDF generation, two-way third-party API sync.
+
+SERVICE 4: Enterprise Software & Distributed ERP Systems
+- URL: https://relient.solutions/services/enterprise-software
+- Pricing: Starting from ₹1,50,000 (Software Business ₹1,50,000 | Enterprise ₹3,00,000+)
+- Tech Stack: Go, Node.js, PostgreSQL, Redis, Next.js, Docker, Kubernetes, Fastify
+- Solves: Stock count mismatch across physical godowns, billing counter lag, manual GST reconciliation.
+- Includes: Distributed inventory ledger, sub-second POS billing engine, automated GST e-invoicing & e-way bills, 99.9% uptime SLA.
+
+SERVICE 5: AI Development & Custom Knowledge Systems
+- URL: https://relient.solutions/services/ai-development
+- Pricing: Starting from ₹25,000 (Starter ₹25,000 | Business ₹50,000 | Enterprise Custom)
+- Tech Stack: Python, FastAPI, LangChain, OpenAI/Claude/Gemini APIs, pgvector, Qdrant
+- Solves: Repetitive customer support tickets, lost hours searching internal PDFs, hallucinating public chatbots.
+- Includes: Custom RAG grounded strictly on company documents, private VPC deployments, PDF document parsing, tool-calling into live DBs.
+
+SERVICE 6: AI Process Automation & Workflow Pipelines
+- URL: https://relient.solutions/services/ai-automation
+- Pricing: Starting from ₹15,000 (Starter ₹15,000 | Business ₹35,000 | Enterprise ₹75,000+)
+- Tech Stack: Node.js, Python, Redis BullMQ, Fastify, Webhooks, REST APIs, PostgreSQL
+- Solves: Manual copy-pasting into spreadsheets, delayed lead responses, uncoordinated accounting entries.
+- Includes: Form-to-CRM pipelines, automated WhatsApp/SMS notifications, payment reconciliation triggers, zero-loss failover retries.
+
+SERVICE 7: Telephony Voice AI & Donna AI Integration
+- URL: https://relient.solutions/services/voice-ai
+- Pricing: Starting from ₹4,999 / month + setup
+- Tech Stack: Donna AI, WebSockets, Python, Fastify, Twilio/SIP, Whisper, CRM APIs
+- Solves: Unanswered customer calls after hours, receptionist burnout, unqualified sales calls.
+- Includes: Inbound/outbound call handling, appointment booking, custom screening rules, CRM lead syncing.
+
+================================================================================
+4. TARGET INDUSTRIES & OPERATIONAL SOLUTIONS
+================================================================================
+
+1. Healthcare & Clinics (https://relient.solutions/industries/healthcare)
+   - Problems: 35% unanswered calls, patient no-shows, fragmented diagnostic test results.
+   - Solutions: Donna AI 24/7 clinic receptionist, WhatsApp appointment reminders (40% no-show drop), secure lab PDF delivery portal.
+
+2. Restaurants & Hospitality (https://relient.solutions/industries/restaurants)
+   - Problems: Loud dining rooms causing missed phone reservations, high 30% delivery commission fees, raw ingredient waste.
+   - Solutions: Donna AI automated phone reservation booking, commission-free direct ordering web app, real-time recipe ingredient depletion.
+
+3. Retail & E-Commerce (https://relient.solutions/industries/retail)
+   - Problems: Inventory discrepancies across godowns, slow holiday checkouts, tedious GST reconciliation.
+   - Solutions: 99.98% accurate distributed inventory ledger, sub-second POS barcode billing, automated GST e-invoicing.
+
+4. Manufacturing & Industry (https://relient.solutions/industries/manufacturing)
+   - Problems: Production shutdowns from unexpected raw material depletion, slow PO sign-offs, untraced component batch defects.
+   - Solutions: Cloud Material Requirement Planning (MRP) with automated reorder alerts, multi-tier digital PO approvals, serial batch traceability.
+
+5. Logistics & Field Services (https://relient.solutions/industries/logistics)
+   - Problems: After-hours freight inquiries lost to voicemail, uncoordinated drivers, disputed delivery claims.
+   - Solutions: Donna AI 24/7 freight intake agent, driver mobile app with live queues, digital proof-of-delivery (photo, GPS, signature).
+
+6. Education & Academies (https://relient.solutions/industries/education)
+   - Problems: Admissions teams overwhelmed by parent calls, uncollected tuition, disconnected teacher-parent communications.
+   - Solutions: Donna AI admissions FAQ & campus tour booking, WhatsApp fee payment reminder flows, unified student/parent portal.
+
+7. Real Estate & Property (https://relient.solutions/industries/real-estate)
+   - Problems: Unqualified ad campaign leads, lost weekend callers, delayed brochure delivery.
+   - Solutions: Donna AI inbound caller budget screening, automated WhatsApp project PDF delivery, direct site visit scheduling.
+
+================================================================================
+5. VERIFIED CASE STUDIES & METRICS
+================================================================================
+
+CASE STUDY 1: Smart Healthcare Platform (Multi-Specialty Clinic Network)
+- Tech: React, Node.js, PostgreSQL, Twilio, Redis, Docker
+- Outcome: 40% reduction in appointment no-shows, zero lost diagnostic records, sub-second patient lookup across 12,000+ monthly visits.
+
+CASE STUDY 2: Custom Billing & Distributed ERP (Regional Distributor)
+- Tech: Next.js, Go/Node.js, PostgreSQL, Redis, Fastify
+- Outcome: 10x faster checkout billing, 99.98% inventory accuracy across 4 godowns, automated daily GST tally generation.
+
+CASE STUDY 3: Donna AI Voice Agent in Logistics (Express Cargo Fleet)
+- Tech: Donna AI, Fastify, WebSockets, Python, Audio Streaming
+- Outcome: 85% first-call query resolution, 3x increase in captured after-hours bookings, sub-220ms voice response latency.
+
+CASE STUDY 4: Inventory & Supply Chain Portal (Precision Manufacturer)
+- Tech: React, Python/FastAPI, PostgreSQL, Redis, Docker
+- Outcome: 28% reduction in material stockouts, 100% digital component audit traceability, 3-day faster vendor PO cycles.
+
+================================================================================
+6. FREQUENTLY ASKED QUESTIONS (AEO / DIRECT ANSWERS)
+================================================================================
+
+Q: What is Relient Solutions?
+A: Relient Solutions is an engineering, software, and AI transformation company headquartered in Hyderabad, India, building custom web applications, mobile apps, enterprise ERP platforms, automation pipelines, and Donna AI telephony voice agents.
+
+Q: Who develops Donna AI?
+A: Donna AI is proprietary software developed, maintained, and operated exclusively by Relient Solutions.
+
+Q: What does Donna AI do?
+A: Donna AI answers inbound and outbound business telephone calls 24/7, speaks with natural human cadence, qualifies customer inquiries, schedules appointments into calendars, and syncs data to CRMs with sub-second latency.
+
+Q: How much does software or website development cost at Relient?
+A: Transparent starting prices: Websites from ₹15,000; mobile apps from ₹60,000; custom software from ₹75,000; enterprise ERPs from ₹1,50,000; Donna AI voice agent plans from ₹4,999/month. Fixed milestone estimates are delivered after discovery.
+
+Q: Where is Relient Solutions located?
+A: Relient Solutions is located in HITEC City, Madhapur, Hyderabad, Telangana 500081, India, and provides remote engineering and deployment services worldwide.
+
+Q: How can I contact Relient Solutions?
+A: You can reach Relient by WhatsApp at +91 83098 04884, email at relient.solutions@gmail.com, or book a discovery call at https://relient.solutions/contact.

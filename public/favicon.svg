@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background subtle radial glow -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="100%" stop-color="#000000" />
+    </radialGradient>
+    <!-- White to soft-silver gradient for 'r' mark -->
+    <linearGradient id="rGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#f5f7fa" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <!-- Electric vibrant blue for square -->
+    <linearGradient id="blueSquare" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007aff" />
+      <stop offset="100%" stop-color="#0051ff" />
+    </linearGradient>
+    <filter id="blueGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Dark container background with sleek rounded corners -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGlow)" />
+  <rect width="512" height="512" rx="112" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="3" />
+
+  <!-- Logo Mark: 'r' shape -->
+  <!-- Bounding box: x: 135 to 310, y: 155 to 370. Width of vertical stem ~58, Top bar thickness ~65 -->
+  <path d="
+    M 148 368
+    L 148 270
+    C 148 206 200 155 264 155
+    L 316 155
+    C 324 155 330 161 330 169
+    L 330 216
+    C 330 224 324 230 316 230
+    L 264 230
+    C 242 230 224 248 224 270
+    L 224 368
+    C 224 374 219 379 213 379
+    L 159 379
+    C 153 379 148 374 148 368
+    Z
+  " fill="url(#rGrad)" />
+
+  <!-- Subtle inner cut reflection for ultra-modern metallic sheen -->
+  <path d="
+    M 148 320
+    L 224 244
+    L 224 270
+    L 148 346
+    Z
+  " fill="#ffffff" opacity="0.15" />
+
+  <!-- Electric Blue Square -->
+  <rect x="348" y="155" width="75" height="75" rx="12" fill="url(#blueSquare)" filter="url(#blueGlow)" />
+</svg>

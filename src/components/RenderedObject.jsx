@@ -206,7 +206,8 @@ function buildCore(mats) {
 
   return {
     group,
-    camZ: 7.4,
+    // The orbit rings (r = 1.9) swing toward the camera; leave room so they never clip.
+    camZ: 8.8,
     update(t) {
       shell.rotation.set(t * 0.15, t * 0.22, 0);
       core.rotation.set(-t * 0.4, -t * 0.55, 0);

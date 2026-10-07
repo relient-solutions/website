@@ -66,7 +66,7 @@ export default function Footer() {
       <div className="wordmark" aria-hidden="true">
         Relient
       </div>
-      <div className="footer-legal">© {new Date().getFullYear()} Relient Solutions Technologies</div>
+      <div className="footer-legal">© {new Date().getFullYear()} Relient Solutions</div>
     </footer>
   );
 }

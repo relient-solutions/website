@@ -3,7 +3,7 @@ import { pageMetadata, breadcrumbSchema } from '@/lib/seo';
 import { MASTER_FAQS, SITE_URL } from '@/lib/seoData';
 
 export const metadata = pageMetadata({
-  title: 'FAQ: Custom Software, AI Agents & Automation | Relient Solutions',
+  title: 'FAQ: Custom Software, AI Agents & Automation | Relient',
   description:
     'Answers to common questions about Relient’s custom software, AI agents and automation: who we work with, timelines, ownership, data migration and support.',
   path: '/faq',

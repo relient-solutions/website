@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import { ArrowRight, Layers, Bot, Workflow } from 'lucide-react';
-import { PageHero, Section, Stats, Tiles, Checks, Steps, ButtonLink, ClosingCTA, Render } from '@/components/ui';
+import { PageHero, Section, Stats, Tiles, Checks, Steps, Faq, ButtonLink, ClosingCTA, Render, JsonLd } from '@/components/ui';
 import { pageMetadata } from '@/lib/seo';
 import { SERVICE_META } from '@/lib/visuals';
-import { CASE_STUDIES_DATA } from '@/lib/seoData';
+import { CASE_STUDIES_DATA, MASTER_FAQS, SERVICES_DATA, SITE_URL, BRAND_NAME, BRAND_PHONE, BRAND_EMAIL, BRAND_ADDRESS, BRAND_GEO } from '@/lib/seoData';
 
 export const metadata = pageMetadata({
-  title: 'Relient — Custom Software, AI Agents & Workflow Automation',
+  title: 'Custom Software Development Company in Hyderabad | Relient',
   description:
-    'Relient builds custom software, AI agents and workflow automation for growing businesses. One system instead of spreadsheets, WhatsApp and SaaS tools — built around how you work, owned by you.',
+    'Relient Solutions builds custom software, CRMs, AI agents and workflow automation for growing businesses in Hyderabad and beyond — built around how you work.',
   path: '/',
 });
 
@@ -38,6 +38,39 @@ const PROMISES = [
   { value: '100%', label: 'code and data ownership' },
 ];
 
+const HOME_FAQS = MASTER_FAQS.filter((f) =>
+  ['What does Relient Solutions do?', 'Why custom software instead of an off-the-shelf tool?', 'What can AI agents and automations do for my business?', 'How long does a build take?', 'Do we own the software and data?'].includes(f.q)
+);
+
+const homeSchema = [
+  {
+    '@type': 'ProfessionalService',
+    '@id': `${SITE_URL}/#business`,
+    name: BRAND_NAME,
+    url: SITE_URL,
+    image: `${SITE_URL}/opengraph-image`,
+    parentOrganization: { '@id': `${SITE_URL}/#organization` },
+    telephone: BRAND_PHONE,
+    email: BRAND_EMAIL,
+    address: { '@type': 'PostalAddress', ...BRAND_ADDRESS },
+    geo: { '@type': 'GeoCoordinates', latitude: BRAND_GEO.latitude, longitude: BRAND_GEO.longitude },
+    areaServed: ['Hyderabad', 'India', 'Worldwide'],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Custom software, AI agents and workflow automation',
+      itemListElement: Object.values(SERVICES_DATA).map((sv) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: sv.title, description: sv.description, url: `${SITE_URL}/services/${sv.slug}` },
+      })),
+    },
+  },
+  {
+    '@type': 'FAQPage',
+    '@id': `${SITE_URL}/#faq`,
+    mainEntity: HOME_FAQS.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
+
 const STEPS = [
   { title: 'Talk', desc: 'A free call to map how your team works today.' },
   { title: 'Scope', desc: 'A clear plan and a fixed quote.' },
@@ -48,11 +81,12 @@ const STEPS = [
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={homeSchema} />
       <PageHero
         label="Custom software & AI · Hyderabad"
         title={
           <>
-            Software built around <em>how you work.</em>
+            Custom software built around <em>how you work.</em>
           </>
         }
         lede="We build custom software, AI agents and automation for growing businesses — so you run on one system instead of spreadsheets, WhatsApp and tools that don't fit. You own all of it."
@@ -146,6 +180,22 @@ export default function HomePage() {
         }
       >
         <Steps items={STEPS} />
+      </Section>
+
+      <Section
+        label="Questions"
+        title={
+          <>
+            Quick <em>answers.</em>
+          </>
+        }
+        action={
+          <Link href="/faq" className="text-link">
+            All questions <ArrowRight size={14} />
+          </Link>
+        }
+      >
+        <Faq items={HOME_FAQS} />
       </Section>
 
       <ClosingCTA />

@@ -31,11 +31,18 @@ export default async function CaseStudyPage({ params }) {
   ];
 
   const pageSchema = {
-    '@type': 'WebPage',
-    '@id': `${SITE_URL}/case-studies/${slug}#webpage`,
+    '@type': 'Article',
+    '@id': `${SITE_URL}/case-studies/${slug}#article`,
     url: `${SITE_URL}/case-studies/${slug}`,
-    name: cs.title,
+    mainEntityOfPage: `${SITE_URL}/case-studies/${slug}`,
+    headline: cs.title,
     description: cs.description,
+    articleSection: 'Case study',
+    about: cs.industry,
+    keywords: cs.technologies.join(', '),
+    image: `${SITE_URL}/opengraph-image`,
+    author: { '@id': `${SITE_URL}/#organization` },
+    publisher: { '@id': `${SITE_URL}/#organization` },
     isPartOf: { '@id': `${SITE_URL}/#website` },
   };
 

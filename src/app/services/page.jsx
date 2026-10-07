@@ -2,15 +2,28 @@ import { ArrowRight } from 'lucide-react';
 import { PageHero, Section, Tiles, Checks, ButtonLink, ClosingCTA, JsonLd } from '@/components/ui';
 import { pageMetadata, breadcrumbSchema } from '@/lib/seo';
 import { SERVICE_META } from '@/lib/visuals';
+import { SERVICES_DATA, SITE_URL } from '@/lib/seoData';
 
 export const metadata = pageMetadata({
-  title: 'Custom Software, AI Agents & Workflow Automation | Relient Solutions',
+  title: 'Custom Software, AI Agents & Automation Services | Relient',
   description:
     'Custom software, AI agents and workflow automation — three parts of one system built around how your business works.',
   path: '/services',
 });
 
 const crumbs = [{ label: 'Services', path: '/services' }];
+
+const listSchema = {
+  '@type': 'ItemList',
+  '@id': `${SITE_URL}/services#list`,
+  name: 'Relient Solutions services',
+  itemListElement: Object.values(SERVICES_DATA).map((sv, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: sv.title,
+    url: `${SITE_URL}/services/${sv.slug}`,
+  })),
+};
 
 export default function ServicesPage() {
   const tiles = Object.entries(SERVICE_META).map(([slug, m]) => ({
@@ -22,7 +35,7 @@ export default function ServicesPage() {
 
   return (
     <>
-      <JsonLd data={breadcrumbSchema(crumbs)} />
+      <JsonLd data={[listSchema, breadcrumbSchema(crumbs)]} />
       <PageHero
         crumbs={crumbs}
         label="Services"

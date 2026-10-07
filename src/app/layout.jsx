@@ -14,10 +14,31 @@ const brand = Plus_Jakarta_Sans({ subsets: ['latin'], weight: ['500', '700'], va
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: `${BRAND_NAME} — Custom Software, AI Agents & Automation`,
-  description:
-    'Custom software, AI agents and workflow automation built around how your business works.',
+  description: 'Custom software, AI agents and workflow automation built around how your business works.',
   applicationName: BRAND_NAME,
-  icons: { icon: '/favicon.svg' },
+  authors: [{ name: BRAND_NAME, url: SITE_URL }],
+  creator: BRAND_NAME,
+  publisher: BRAND_NAME,
+  category: 'technology',
+  keywords: [
+    'custom software development',
+    'custom software development company in Hyderabad',
+    'custom CRM development',
+    'real estate CRM software',
+    'client portal development',
+    'AI agents for business',
+    'business workflow automation',
+    'WhatsApp automation',
+    'internal tools development',
+    'software company Hyderabad',
+    'Relient Solutions',
+  ],
+  formatDetection: { telephone: false, email: false, address: false },
+  // Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION / NEXT_PUBLIC_BING_SITE_VERIFICATION to verify the site in Search Console / Bing Webmaster.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } : undefined,
+  },
 };
 
 export const viewport = {
@@ -27,7 +48,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable} ${mono.variable} ${brand.variable}`}>
+    <html lang="en-IN" className={`${sans.variable} ${serif.variable} ${mono.variable} ${brand.variable}`}>
       <body>
         <JsonLd data={[organizationSchema, websiteSchema]} />
         <Navbar />

@@ -6,8 +6,6 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /*?*
-Disallow: /temp/
 
 # Dedicated Search Engine & AI Crawler Directives
 User-agent: Googlebot

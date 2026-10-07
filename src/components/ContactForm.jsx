@@ -3,8 +3,6 @@
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
-import { saveInquiryToFirebase } from '@/lib/firebase';
 import { BRAND_PHONE_INTL } from '@/lib/seoData';
 import TermsModal from './TermsModal';
 import Select from './Select';
@@ -23,6 +21,7 @@ export default function ContactForm() {
     company: '',
     service: SERVICES.find((s) => preset && s.toLowerCase().includes(preset.toLowerCase().split(' ')[0])) || SERVICES[0],
     teamSize: TEAM_SIZES[1],
+    website: '',
     message: preset ? `I'm interested in: ${preset}` : '',
   });
   const [sending, setSending] = useState(false);
@@ -34,43 +33,31 @@ export default function ContactForm() {
   const submit = async (e) => {
     e.preventDefault();
     setSending(true);
-    const auditId = 'RELIENT-' + Date.now().toString(16).toUpperCase();
-    const now = new Date().toISOString();
-    const payload = {
-      name: form.name,
-      email: form.email,
-      phone: form.phone,
-      company: form.company,
-      service: form.service,
-      budget: '',
-      booking_date: '',
-      booking_time: '',
-      call_type: '',
-      // Team size rides in the message so the existing inquiries schema stays unchanged.
-      message: `${form.message}\n\nTeam size: ${form.teamSize}`.trim(),
-      terms_accepted: true,
-      terms_accepted_at: now,
-      client_timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC',
-      createdAt: now,
-    };
-
-    // Save the inquiry everywhere the old form did; each step is best-effort.
+    // Saved server-side to Postgres (src/app/api/inquiries/route.js). If that fails,
+    // the WhatsApp hand-off below still delivers the lead.
+    let auditId = 'RELIENT-' + Date.now().toString(16).toUpperCase();
     try {
-      await saveInquiryToFirebase(payload);
+      const res = await fetch('/api/inquiries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          service: form.service,
+          teamSize: form.teamSize,
+          message: form.message,
+          website: form.website,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || '',
+          page: window.location.pathname + window.location.search,
+        }),
+      });
+      const result = await res.json();
+      if (res.ok && result.ref) auditId = result.ref;
+      else console.warn('Inquiry not saved:', result.error);
     } catch (err) {
-      console.warn('Firebase notice:', err);
-    }
-    try {
-      await supabase.from('inquiries').insert([payload]);
-    } catch (err) {
-      console.warn('Supabase notice:', err);
-    }
-    try {
-      const existing = JSON.parse(localStorage.getItem('relient_inquiries') || '[]');
-      existing.unshift({ ...payload, auditId });
-      localStorage.setItem('relient_inquiries', JSON.stringify(existing));
-    } catch {
-      // storage unavailable
+      console.warn('Inquiry not saved:', err);
     }
 
     const text =
@@ -132,6 +119,8 @@ export default function ContactForm() {
       </div>
       <Select id="service" label="What do you need?" value={form.service} options={SERVICES} onChange={(v) => setForm((f) => ({ ...f, service: v }))} />
       <Select id="teamSize" label="Team size" value={form.teamSize} options={TEAM_SIZES} onChange={(v) => setForm((f) => ({ ...f, teamSize: v }))} />
+      {/* Honeypot for bots — hidden from people and screen readers. */}
+      <input type="text" name="website" value={form.website} onChange={set('website')} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }} />
       <div className="field full">
         <label htmlFor="message">What tools do you use today, and what's not working?</label>
         <textarea id="message" value={form.message} onChange={set('message')} />

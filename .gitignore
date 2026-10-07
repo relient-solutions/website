@@ -29,3 +29,6 @@ dist-ssr
 .next
 out
 next-env.d.ts
+
+# Internal sales material (brochure, partner guide, agency brief) — kept local, not published
+docs/

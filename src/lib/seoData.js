@@ -21,10 +21,8 @@ export const BRAND_GEO = {
   latitude: 17.4483,
   longitude: 78.3742,
 };
-export const BRAND_SOCIALS = [
-  'https://wa.me/918309804884',
-  'https://instagram.com',
-];
+// Official profiles only (LinkedIn, Google Business Profile, Instagram, Clutch…). Add each real URL here — it feeds Organization.sameAs.
+export const BRAND_SOCIALS = [];
 
 // One-line positioning, reused across metadata, schema and llms.txt.
 export const BRAND_POSITIONING =
@@ -52,8 +50,15 @@ export const organizationSchema = {
     width: '512',
     height: '512',
   },
-  image: `${SITE_URL}/relient-banner.png`,
+  image: `${SITE_URL}/opengraph-image`,
   description: BRAND_POSITIONING,
+  slogan: 'Software built around how you work.',
+  foundingDate: BRAND_FOUNDED,
+  areaServed: [
+    { '@type': 'City', name: 'Hyderabad' },
+    { '@type': 'Country', name: 'India' },
+    'Worldwide',
+  ],
   email: BRAND_EMAIL,
   telephone: BRAND_PHONE,
   address: {
@@ -64,7 +69,7 @@ export const organizationSchema = {
     postalCode: BRAND_ADDRESS.postalCode,
     addressCountry: BRAND_ADDRESS.addressCountry,
   },
-  sameAs: BRAND_SOCIALS,
+  ...(BRAND_SOCIALS.length ? { sameAs: BRAND_SOCIALS } : {}),
   knowsAbout: [
     'Custom Software Development',
     'Custom CRM Development',
@@ -95,7 +100,7 @@ export const websiteSchema = {
   publisher: {
     '@id': `${SITE_URL}/#organization`,
   },
-  inLanguage: 'en-US',
+  inLanguage: 'en-IN',
   description: 'Custom software, AI agents and workflow automation built around how your business works.',
 };
 
@@ -104,9 +109,9 @@ export const SERVICES_DATA = {
   'custom-software': {
     slug: 'custom-software',
     title: 'Custom Software Development',
-    seoTitle: 'Custom Software Development: CRMs, Portals & Internal Tools | Relient Solutions',
+    seoTitle: 'Custom Software Development: CRMs & Portals | Relient',
     description:
-      'CRMs, client portals, dashboards and internal tools built around how your business already works — replacing spreadsheets, WhatsApp threads and SaaS tools that never quite fit.',
+      'CRMs, client portals, dashboards and internal tools built around how your business works — replacing spreadsheets, WhatsApp and SaaS that never quite fit.',
     category: 'Custom Software',
     targetAudience:
       'Growing businesses that have outgrown spreadsheets and generic SaaS, and need one system shaped around their own process.',
@@ -161,7 +166,7 @@ export const SERVICES_DATA = {
     title: 'AI Agents for Business',
     seoTitle: 'Custom AI Agents for Business | Relient Solutions',
     description:
-      'AI agents that work inside your business — replying to enquiries, qualifying leads, answering from your documents and drafting updates — with a person approving wherever you want.',
+      'AI agents that work inside your business — replying to enquiries, qualifying leads and drafting updates, with a person approving wherever you want.',
     category: 'AI Agents',
     targetAudience:
       'Teams spending hours on repetitive replies, qualification and write-ups that an AI agent can handle reliably.',
@@ -279,7 +284,7 @@ export const CASE_STUDIES_DATA = [
     industry: 'Real Estate',
     summary: 'From a monthly CRM subscription to one system they own: leads, property, employees and attendance.',
     description:
-      'How we replaced Amacs India’s monthly LeadRat CRM subscription with a one-time custom CRM covering leads, property management and camera-verified employee attendance.',
+      'How we replaced Amacs India’s monthly LeadRat subscription with a one-time custom CRM for leads, property management and camera-verified attendance.',
     problem:
       'Amacs India, a real estate company in Mysuru, was using LeadRat CRM and paying for it every month. It handled leads, but not the rest of how they work: they also wanted to track employee attendance and manage properties.',
     problems: [
@@ -311,7 +316,7 @@ export const CASE_STUDIES_DATA = [
     industry: 'Agencies',
     summary: 'One portal where clients see progress, without messaging you.',
     description:
-      'A client portal for agencies that brings timelines, deliverables and updates into one place — shaped by conversations with agency owners juggling Trello, Drive, ClickUp, email and calls.',
+      'A client portal for agencies that puts timelines, deliverables and updates in one place — shaped by agency owners juggling Trello, Drive and ClickUp.',
     problem:
       'Agency owners we spoke with manage clients through a mix of Trello boards, shared Google Drive folders, Asana or ClickUp, email reports and calls. It works, but clients need a nudge to check those tools and keep messaging the owner directly for updates.',
     problems: [

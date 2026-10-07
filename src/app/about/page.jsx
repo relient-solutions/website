@@ -1,16 +1,25 @@
 import { ArrowRight, Target, Wrench, MessageSquare, KeyRound } from 'lucide-react';
 import { PageHero, Section, Stats, Tiles, ButtonLink, ClosingCTA, JsonLd } from '@/components/ui';
 import { pageMetadata, breadcrumbSchema } from '@/lib/seo';
-import { BRAND_ADDRESS, BRAND_FOUNDED } from '@/lib/seoData';
+import { BRAND_ADDRESS, BRAND_FOUNDED, SITE_URL } from '@/lib/seoData';
 
 export const metadata = pageMetadata({
-  title: 'About Relient Solutions | Custom Software, AI Agents & Automation',
+  title: 'About Relient Solutions — Custom Software Studio, Hyderabad',
   description:
     'Relient Solutions is a Hyderabad studio building custom software, AI agents and workflow automation for growing businesses.',
   path: '/about',
 });
 
 const crumbs = [{ label: 'About Relient', path: '/about' }];
+
+const aboutSchema = {
+  '@type': 'AboutPage',
+  '@id': `${SITE_URL}/about#webpage`,
+  url: `${SITE_URL}/about`,
+  name: 'About Relient Solutions',
+  isPartOf: { '@id': `${SITE_URL}/#website` },
+  mainEntity: { '@id': `${SITE_URL}/#organization` },
+};
 
 const PRINCIPLES = [
   { title: 'Problem first', desc: 'We understand your business before we write code.', icon: Target },
@@ -22,7 +31,7 @@ const PRINCIPLES = [
 export default function AboutPage() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema(crumbs)} />
+      <JsonLd data={[aboutSchema, breadcrumbSchema(crumbs)]} />
       <PageHero
         crumbs={crumbs}
         label="About"

@@ -5,7 +5,7 @@ import { BRAND_NAME, BRAND_PHONE, BRAND_EMAIL, BRAND_ADDRESS, BRAND_GEO, SITE_UR
 import { SERVICE_META } from '@/lib/visuals';
 
 export const metadata = pageMetadata({
-  title: 'Custom Software & AI Automation Company in Hyderabad | Relient Solutions',
+  title: 'Software Development Company in HITEC City, Hyderabad | Relient',
   description:
     'Relient Solutions builds custom software, AI agents and workflow automation from HITEC City, Hyderabad — for businesses in Hyderabad and beyond.',
   path: '/locations/hyderabad',
@@ -20,7 +20,7 @@ const localBusinessSchema = {
   '@type': 'LocalBusiness',
   '@id': `${SITE_URL}/locations/hyderabad#localbusiness`,
   name: `${BRAND_NAME} - Hyderabad Headquarters`,
-  image: `${SITE_URL}/relient-banner.png`,
+  image: `${SITE_URL}/opengraph-image`,
   telephone: BRAND_PHONE,
   email: BRAND_EMAIL,
   url: `${SITE_URL}/locations/hyderabad`,

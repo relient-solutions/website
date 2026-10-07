@@ -6,7 +6,7 @@ import { CASE_STUDIES_DATA, SITE_URL } from '@/lib/seoData';
 import { SERVICE_META } from '@/lib/visuals';
 
 export const metadata = pageMetadata({
-  title: 'Case Studies: Real Estate CRM & Agency Client Portal | Relient Solutions',
+  title: 'Case Studies: Custom CRM & Client Portal | Relient',
   description:
     'Custom software we have built: a custom CRM for Amacs India (real estate, Mysuru), and a client portal for agencies. The same approach works for any business.',
   path: '/case-studies',
@@ -21,6 +21,15 @@ const pageSchema = {
   description:
     'A custom real estate CRM and an agency client portal.',
   isPartOf: { '@id': `${SITE_URL}/#website` },
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: CASE_STUDIES_DATA.map((cs, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: cs.title,
+      url: `${SITE_URL}/case-studies/${cs.slug}`,
+    })),
+  },
 };
 
 export default function CaseStudiesPage() {

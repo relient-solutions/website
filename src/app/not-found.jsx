@@ -3,7 +3,7 @@ import { PageHero, ButtonLink } from '@/components/ui';
 
 export const metadata = {
   title: { absolute: '404 — Page Not Found | Relient Solutions' },
-  description: 'The page you are looking for does not exist or has been moved. Explore Relient Solutions services, Donna AI, or contact our engineering team.',
+  description: 'The page you are looking for does not exist or has been moved. Explore Relient’s custom software, AI agents and automation, or contact us.',
   robots: { index: false, follow: true },
 };
 

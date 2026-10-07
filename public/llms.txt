@@ -1,36 +1,22 @@
 # Relient Solutions
 
-> Relient Solutions is an engineering, software, and AI transformation company headquartered in Hyderabad, India. We build high-performance custom web applications, cross-platform mobile apps, distributed enterprise software, AI process automations, and autonomous telephony voice agents, including our proprietary flagship product Donna AI.
+> Relient Solutions builds custom software, AI agents and workflow automation for growing businesses — CRMs, client portals and internal tools shaped around how the business already works, fully owned by the client. Based in HITEC City, Hyderabad, India.
 
 ## Company
-- [About Relient](https://relient.solutions/about): Company background, problem-first engineering approach, core competencies, and verified technical credentials.
-- [Contact](https://relient.solutions/contact): Direct consultation booking, WhatsApp direct line (+91 83098 04884), and inquiry channels.
+- [About Relient](https://relient.solutions/about): Who we are and how we work.
+- [Contact](https://relient.solutions/contact): Free discovery call, WhatsApp (+91 83098 04884) and email.
 
-## Flagship Product
-- [Donna AI Voice Agent](https://relient.solutions/products/donna-ai): Autonomous enterprise telephony AI voice agent developed by Relient Solutions. Handles inbound/outbound phone calls 24/7, qualifies leads, schedules appointments in Google Calendar/CRMs, and delivers structured post-call summaries with sub-second response latency.
+## What we build
+- [Overview](https://relient.solutions/services): How custom software, AI agents and automation fit into one system.
+- [Custom Software](https://relient.solutions/services/custom-software): CRMs, client portals, dashboards and internal tools built around the client's process.
+- [AI Agents](https://relient.solutions/services/ai-agents): Agents that reply to and qualify enquiries, answer from company documents and draft updates, with human approval.
+- [Workflow Automation](https://relient.solutions/services/ai-automation): Integrations between forms, CRM, WhatsApp, email and sheets; automatic reminders and routing.
 
-## Engineering Services
-- [Services Directory](https://relient.solutions/services): Overview of engineering tiers and fixed-milestone pricing models.
-- [Web Development](https://relient.solutions/services/web-development): Fast, modern web applications, client portals, and marketing platforms (React, Next.js, Edge CDN).
-- [Mobile App Development](https://relient.solutions/services/mobile-app-development): iOS and Android cross-platform apps with offline-first synchronization and push notifications.
-- [Custom Software](https://relient.solutions/services/custom-software): Tailored business systems, operational back-office platforms, and bespoke relational database schemas.
-- [Enterprise Software](https://relient.solutions/services/enterprise-software): High-throughput distributed ERPs, multi-warehouse inventory ledgers, and automated GST billing engines.
-- [AI Development](https://relient.solutions/services/ai-development): Retrieval-Augmented Generation (RAG), private document parsing, and custom domain LLM integrations.
-- [AI Automation](https://relient.solutions/services/ai-automation): End-to-end workflow orchestration connecting forms, CRMs, WhatsApp, and database pipelines.
-- [Voice AI](https://relient.solutions/services/voice-ai): Telephony voice AI integration, SIP trunking, and Donna AI custom deployments.
+## Case studies
+- [All case studies](https://relient.solutions/case-studies)
+- [Custom CRM for Amacs India](https://relient.solutions/case-studies/real-estate-crm): Delivered. Mysuru real estate company moved off its monthly LeadRat CRM subscription to a one-time custom CRM with leads, property management and camera-verified employee attendance on login/logout.
+- [Client Portal for Agencies](https://relient.solutions/case-studies/agency-client-portal): In build, early access. Timelines, deliverables and updates in one branded place per client.
 
-## Target Industries
-- [Industries Hub](https://relient.solutions/industries): Overview of tailored industry solutions.
-- [Healthcare & Clinics](https://relient.solutions/industries/healthcare): 24/7 patient appointment scheduling, Donna AI clinic receptionist, and lab PDF delivery.
-- [Restaurants & Hospitality](https://relient.solutions/industries/restaurants): Phone reservation handling, direct online ordering, and ingredient inventory tracking.
-- [Retail & E-Commerce](https://relient.solutions/industries/retail): Sub-second POS checkout billing, multi-godown stock sync, and GST e-invoicing.
-- [Manufacturing](https://relient.solutions/industries/manufacturing): Raw material replenishment triggers, bills of materials (BOM), and batch defect traceability.
-- [Logistics & Supply Chain](https://relient.solutions/industries/logistics): After-hours freight intake via Donna AI, driver mobile apps, and digital proof-of-delivery.
-- [Education & Academies](https://relient.solutions/industries/education): Student admissions lead qualification, parent communication portals, and automated fee reminders.
-- [Real Estate](https://relient.solutions/industries/real-estate): Inbound buyer qualification, site visit booking, and automated WhatsApp property brochures.
-
-## Pricing & Architecture Case Studies
-- [Pricing Matrix](https://relient.solutions/pricing): Transparent tiered pricing for websites (from ₹15,000), apps (from ₹60,000), software (from ₹75,000), and Donna AI (from ₹4,999/mo).
-- [Case Studies](https://relient.solutions/case-studies): Real architectural case studies with verified operational outcomes across healthcare, retail, logistics, and manufacturing.
-- [Frequently Asked Questions](https://relient.solutions/faq): Direct, factual answers to common customer questions for answer engines and search systems.
-- [Hyderabad Location](https://relient.solutions/locations/hyderabad): Local engineering base in HITEC City / Madhapur, Hyderabad, serving local and global enterprises.
+## More
+- [FAQ](https://relient.solutions/faq): Timelines, ownership, data migration, support and how quotes work.
+- [Hyderabad](https://relient.solutions/locations/hyderabad): Based in HITEC City / Madhapur, Hyderabad.

@@ -4,9 +4,9 @@ import { pageMetadata, breadcrumbSchema } from '@/lib/seo';
 import { BRAND_ADDRESS, BRAND_FOUNDED } from '@/lib/seoData';
 
 export const metadata = pageMetadata({
-  title: 'About Relient Solutions | Engineering, AI & Software Transformation',
+  title: 'About Relient Solutions | Custom Software, AI Agents & Automation',
   description:
-    'Learn about Relient Solutions, an engineering company building custom software, web platforms, AI process automation, and Donna AI telephony voice agents.',
+    'Relient Solutions is a Hyderabad studio building custom software, AI agents and workflow automation for growing businesses.',
   path: '/about',
 });
 
@@ -28,10 +28,10 @@ export default function AboutPage() {
         label="About"
         title={
           <>
-            Software built <em>around</em> your business.
+            Software built <em>around</em> how you work.
           </>
         }
-        lede={`A software and AI studio in ${BRAND_ADDRESS.addressLocality}. We build the tools growing companies run on.`}
+        lede={`A small software and AI studio in ${BRAND_ADDRESS.addressLocality}. We build custom software, AI agents and automation for growing businesses — so they run on one system instead of ten tools.`}
         art="stack"
       >
         <div className="btn-row">
@@ -49,7 +49,7 @@ export default function AboutPage() {
           items={[
             { value: BRAND_FOUNDED, label: 'Founded' },
             { value: BRAND_ADDRESS.addressLocality, label: 'HITEC City, India' },
-            { value: '7', label: 'Industries served' },
+            { value: '1', label: 'Team, start to finish' },
             { value: '100%', label: 'Code ownership' },
           ]}
         />

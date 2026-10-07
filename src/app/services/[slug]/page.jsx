@@ -37,13 +37,6 @@ export default async function ServiceDetailPage({ params }) {
     provider: { '@id': `${SITE_URL}/#organization` },
     serviceType: service.category,
     areaServed: { '@type': 'AdministrativeArea', name: 'Worldwide' },
-    offers: {
-      '@type': 'Offer',
-      price: service.priceStarting.replace(/[^0-9]/g, '') || '15000',
-      priceCurrency: 'INR',
-      availability: 'https://schema.org/InStock',
-      url: `${SITE_URL}/services/${slug}`,
-    },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: service.title,
@@ -79,13 +72,24 @@ export default async function ServiceDetailPage({ params }) {
       <div className="wrap" style={{ paddingBottom: 40 }}>
         <Stats
           items={[
-            { value: service.priceStarting, label: 'Starting price' },
-            { value: '1–6 weeks', label: 'Typical delivery' },
-            { value: '100%', label: 'Code ownership' },
+            { value: 'Weeks', label: 'To a working first version' },
+            { value: 'Weekly', label: 'Demos while we build' },
+            { value: '100%', label: 'Code & data ownership' },
           ]}
           cols={3}
         />
       </div>
+
+      <Section
+        label="The problem"
+        title={
+          <>
+            Sound <em>familiar?</em>
+          </>
+        }
+      >
+        <Checks items={service.problemsSolved.map((f) => f.replace(/\.$/, ''))} />
+      </Section>
 
       <Section
         label="What's included"
@@ -96,6 +100,10 @@ export default async function ServiceDetailPage({ params }) {
         }
       >
         <Checks items={service.features.map((f) => f.replace(/\.$/, ''))} />
+      </Section>
+
+      <Section label="Where it fits">
+        <Tiles items={service.useCases.map((u) => ({ title: u.title, desc: u.desc }))} cols={3} />
       </Section>
 
       <Section
@@ -121,7 +129,7 @@ export default async function ServiceDetailPage({ params }) {
             Ready to <em>start?</em>
           </>
         }
-        text="Tell us what you need. We'll reply with a clear scope and a fixed price."
+        text="Tell us how your team works today. We'll reply with a clear scope and a fixed quote."
         buttonLabel="Get a quote"
         href={`/contact?service=${encodeURIComponent(service.title)}`}
       />

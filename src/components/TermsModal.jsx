@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { X, ShieldCheck, FileText, Lock, Scale, CalendarCheck, CheckCircle2 } from 'lucide-react';
+import { X, FileText } from 'lucide-react';
 
 export default function TermsModal({ isOpen, onClose, onAccept }) {
   if (!isOpen) return null;
@@ -111,7 +111,7 @@ export default function TermsModal({ isOpen, onClose, onAccept }) {
               1. Engagement & Scoping
             </h4>
             <p>
-              All projects undertaken by Relient are governed by a mutually executed Statement of Work (SOW). Initial estimates, starting rates, and consultation discussions represent baseline projections. Final deliverables, technical specifications, third-party API dependencies, and delivery timelines are formalized prior to project commencement.
+              All projects undertaken by Relient are governed by a mutually executed Statement of Work (SOW). Initial estimates and consultation discussions represent baseline projections. Final deliverables, technical specifications, third-party API dependencies, and delivery timelines are formalized prior to project commencement.
             </p>
           </div>
 
@@ -120,22 +120,13 @@ export default function TermsModal({ isOpen, onClose, onAccept }) {
               2. Intellectual Property Rights
             </h4>
             <p>
-              Upon full settlement of agreed project milestone invoices, all bespoke source code, database architectures, user interface assets, and custom logic created exclusively for the client shall transfer to the client. Relient retains ownership of proprietary foundational libraries, reusable modules, and the Donna AI voice platform architecture.
+              Upon full settlement of agreed project milestone invoices, all bespoke source code, database architectures, user interface assets, and custom logic created exclusively for the client shall transfer to the client. Relient retains ownership of proprietary foundational libraries and reusable modules.
             </p>
           </div>
 
           <div>
             <h4 style={{ fontSize: '1.02rem', fontWeight: 600, color: '#ededed', marginBottom: '6px' }}>
-              3. Telephony & Usage Pricing (Donna AI)
-            </h4>
-            <p>
-              Donna AI platform packages encompass base platform software fees. Additional voice streaming, carrier telephony trunking, and provider token usage are billed directly based on verified call duration and API telemetry consumed during each monthly billing cycle.
-            </p>
-          </div>
-
-          <div>
-            <h4 style={{ fontSize: '1.02rem', fontWeight: 600, color: '#ededed', marginBottom: '6px' }}>
-              4. Data Privacy & Confidentiality
+              3. Data Privacy & Confidentiality
             </h4>
             <p>
               Relient treats all proprietary client documentation, database contents, customer records, and internal business logic with strict confidentiality. Non-Disclosure Agreements (NDAs) are executed upon request prior to technical scoping sessions.

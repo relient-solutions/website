@@ -7,17 +7,11 @@ import { supabase } from '@/lib/supabase';
 import { saveInquiryToFirebase } from '@/lib/firebase';
 import { BRAND_PHONE_INTL } from '@/lib/seoData';
 import TermsModal from './TermsModal';
+import Select from './Select';
 
-const SERVICES = [
-  'Website Development',
-  'Mobile App Development',
-  'Custom Business Software',
-  'AI Solutions & Automation',
-  'Donna AI Voice Agent',
-  'Enterprise Consultation',
-];
+const SERVICES = ['Custom Software', 'AI Agents', 'Workflow Automation', 'Not sure yet'];
 
-const BUDGETS = ['Under ₹30,000', '₹30,000 - ₹75,000', '₹75,000 - ₹1,50,000', '₹1,50,000 - ₹3,00,000', '₹3,00,000+'];
+const TEAM_SIZES = ['Just me', '2–10 people', '11–50 people', '50+ people'];
 
 export default function ContactForm() {
   const params = useSearchParams();
@@ -28,7 +22,7 @@ export default function ContactForm() {
     phone: '',
     company: '',
     service: SERVICES.find((s) => preset && s.toLowerCase().includes(preset.toLowerCase().split(' ')[0])) || SERVICES[0],
-    budget: BUDGETS[1],
+    teamSize: TEAM_SIZES[1],
     message: preset ? `I'm interested in: ${preset}` : '',
   });
   const [sending, setSending] = useState(false);
@@ -48,11 +42,12 @@ export default function ContactForm() {
       phone: form.phone,
       company: form.company,
       service: form.service,
-      budget: form.budget,
+      budget: '',
       booking_date: '',
       booking_time: '',
       call_type: '',
-      message: form.message,
+      // Team size rides in the message so the existing inquiries schema stays unchanged.
+      message: `${form.message}\n\nTeam size: ${form.teamSize}`.trim(),
       terms_accepted: true,
       terms_accepted_at: now,
       client_timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC',
@@ -85,7 +80,7 @@ export default function ContactForm() {
       `• *Phone:* ${form.phone || 'Not specified'}\n` +
       `• *Company:* ${form.company || 'Not specified'}\n` +
       `• *Service:* ${form.service}\n` +
-      `• *Budget:* ${form.budget}\n` +
+      `• *Team size:* ${form.teamSize}\n` +
       `• *Message:* ${form.message || 'Ready to build'}\n` +
       `• *Ref ID:* ${auditId}`;
     const phone = BRAND_PHONE_INTL.replace('+', '');
@@ -135,24 +130,10 @@ export default function ContactForm() {
         <label htmlFor="company">Company</label>
         <input id="company" value={form.company} onChange={set('company')} autoComplete="organization" />
       </div>
-      <div className="field">
-        <label htmlFor="service">What do you need?</label>
-        <select id="service" value={form.service} onChange={set('service')}>
-          {SERVICES.map((s) => (
-            <option key={s}>{s}</option>
-          ))}
-        </select>
-      </div>
-      <div className="field">
-        <label htmlFor="budget">Budget</label>
-        <select id="budget" value={form.budget} onChange={set('budget')}>
-          {BUDGETS.map((b) => (
-            <option key={b}>{b}</option>
-          ))}
-        </select>
-      </div>
+      <Select id="service" label="What do you need?" value={form.service} options={SERVICES} onChange={(v) => setForm((f) => ({ ...f, service: v }))} />
+      <Select id="teamSize" label="Team size" value={form.teamSize} options={TEAM_SIZES} onChange={(v) => setForm((f) => ({ ...f, teamSize: v }))} />
       <div className="field full">
-        <label htmlFor="message">Tell us a little about it</label>
+        <label htmlFor="message">What tools do you use today, and what's not working?</label>
         <textarea id="message" value={form.message} onChange={set('message')} />
       </div>
       <div className="form-foot">

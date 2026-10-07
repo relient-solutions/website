@@ -4,24 +4,17 @@ import BrandMark from '@/components/BrandMark';
 
 const COLUMNS = [
   {
-    title: 'Services',
+    title: 'What we build',
     links: [
-      { label: 'Websites', href: '/services/web-development' },
-      { label: 'Mobile Apps', href: '/services/mobile-app-development' },
       { label: 'Custom Software', href: '/services/custom-software' },
-      { label: 'Enterprise & ERP', href: '/services/enterprise-software' },
-      { label: 'AI Development', href: '/services/ai-development' },
-      { label: 'Automation', href: '/services/ai-automation' },
-      { label: 'Voice AI', href: '/services/voice-ai' },
+      { label: 'AI Agents', href: '/services/ai-agents' },
+      { label: 'Workflow Automation', href: '/services/ai-automation' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'Donna AI', href: '/products/donna-ai' },
-      { label: 'Industries', href: '/industries' },
-      { label: 'Our Work', href: '/case-studies' },
-      { label: 'Pricing', href: '/pricing' },
+      { label: 'Case Studies', href: '/case-studies' },
       { label: 'About', href: '/about' },
       { label: 'FAQ', href: '/faq' },
       { label: 'Hyderabad', href: '/locations/hyderabad' },
@@ -46,10 +39,11 @@ export default function Footer() {
           <div className="footer-brand">
             <Link href="/" className="brand">
               <BrandMark />
-              Relient
+              <span className="brand-name">Relient</span>
+              <span className="brand-sub">Solutions</span>
             </Link>
             <p>
-              Software, built <em className="metal-text">around</em> your business.
+              Custom software &amp; AI, built around <em className="metal-text">how you work.</em>
             </p>
             <div className="status">
               <i /> Taking new projects · {BRAND_ADDRESS.addressLocality}, India

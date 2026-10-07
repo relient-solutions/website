@@ -8,7 +8,7 @@ import { BRAND_NAME, BRAND_PHONE, BRAND_PHONE_INTL, BRAND_EMAIL, BRAND_ADDRESS, 
 export const metadata = pageMetadata({
   title: 'Contact Relient Solutions | Book a Discovery Call',
   description:
-    'Get in touch with Relient Solutions. Book a free 30-minute technical discovery call, chat directly on WhatsApp at +91 83098 04884, or submit project requirements.',
+    'Book a free discovery call about custom software, AI agents or automation. Chat on WhatsApp at +91 83098 04884 or tell us how your team works today.',
   path: '/contact',
 });
 
@@ -62,7 +62,7 @@ export default function ContactPage() {
         label="Send a message"
         title={
           <>
-            Start your <em>project.</em>
+            Tell us how you <em>work today.</em>
           </>
         }
       >

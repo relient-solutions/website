@@ -4,9 +4,9 @@ import { pageMetadata, breadcrumbSchema } from '@/lib/seo';
 import { SERVICE_META } from '@/lib/visuals';
 
 export const metadata = pageMetadata({
-  title: 'Services & Engineering Directory | Relient Solutions',
+  title: 'Custom Software, AI Agents & Workflow Automation | Relient Solutions',
   description:
-    "Explore Relient's complete engineering services: Web Development, Mobile Apps, Custom Software, Enterprise ERPs, AI Automation, and Donna AI Voice Agents.",
+    'Custom software, AI agents and workflow automation — three parts of one system built around how your business works.',
   path: '/services',
 });
 
@@ -28,18 +28,18 @@ export default function ServicesPage() {
         label="Services"
         title={
           <>
-            Everything your business <em>runs on.</em>
+            Three parts, <em>one system.</em>
           </>
         }
-        lede="Pick what you need. One team builds it all."
+        lede="Software shaped around your process, AI agents that do the repetitive thinking, and automation that connects it all. Start with one, add the rest when you need it."
         art="modules"
       >
         <div className="btn-row">
           <ButtonLink href="/contact">
             Book a free call <ArrowRight size={16} />
           </ButtonLink>
-          <ButtonLink ghost href="/pricing">
-            See pricing
+          <ButtonLink ghost href="/case-studies">
+            See our work
           </ButtonLink>
         </div>
       </PageHero>
@@ -56,7 +56,7 @@ export default function ServicesPage() {
           </>
         }
       >
-        <Checks items={['Fixed price, agreed up front', 'You own all the code', 'Talk directly to engineers', 'Support after launch']} />
+        <Checks items={['Fixed quote, agreed up front', 'You own all the code', 'Talk directly to engineers', 'Support after launch']} />
       </Section>
 
       <ClosingCTA />

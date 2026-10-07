@@ -201,37 +201,6 @@ export function Faq({ items }) {
   );
 }
 
-export function Plans({ plans, contactHref = '/contact' }) {
-  return (
-    <div className="plans">
-      {plans.map((p) => (
-        <div key={p.name} className={`card plan ${p.popular ? 'popular' : ''}`}>
-          <div className="plan-top">
-            <span className="label">{p.subtitle || p.description}</span>
-            {p.popular && <span className="badge">Popular</span>}
-          </div>
-          <h3>{p.name}</h3>
-          <div className="price">
-            <strong>{p.price}</strong>
-            {p.period && <span>{p.period}</span>}
-          </div>
-          <ul>
-            {p.features.slice(0, 5).map((f) => (
-              <li key={f}>
-                <Check size={14} />
-                <span>{f}</span>
-              </li>
-            ))}
-          </ul>
-          <Link className={`btn ${p.popular ? 'btn-metal' : 'btn-ghost'}`} href={`${contactHref}?plan=${encodeURIComponent(p.name)}`}>
-            Get started <ArrowRight size={15} />
-          </Link>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export function ClosingCTA({ title, text, buttonLabel = 'Book a free call', href = '/contact' }) {
   return (
     <section className="cta">

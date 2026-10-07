@@ -5,9 +5,9 @@ import { BRAND_NAME, BRAND_PHONE, BRAND_EMAIL, BRAND_ADDRESS, BRAND_GEO, SITE_UR
 import { SERVICE_META } from '@/lib/visuals';
 
 export const metadata = pageMetadata({
-  title: 'AI & Custom Software Development Company in Hyderabad | Relient Solutions',
+  title: 'Custom Software & AI Automation Company in Hyderabad | Relient Solutions',
   description:
-    'Relient Solutions is a software and AI development company headquartered in HITEC City, Hyderabad. Custom software, enterprise ERPs, web apps, and Donna AI telephony agents.',
+    'Relient Solutions builds custom software, AI agents and workflow automation from HITEC City, Hyderabad — for businesses in Hyderabad and beyond.',
   path: '/locations/hyderabad',
 });
 
@@ -41,16 +41,15 @@ const localBusinessSchema = {
       closes: '19:00',
     },
   ],
-  priceRange: '₹₹₹',
   areaServed: ['Hyderabad', 'Cyberabad', 'HITEC City', 'Madhapur', 'Gachibowli', 'Kondapur', 'Jubilee Hills', 'Banjara Hills', 'Telangana', 'Worldwide'],
 };
 
 export default function HyderabadPage() {
-  const tiles = ['voice-ai', 'custom-software', 'web-development', 'mobile-app-development'].map((s) => ({
+  const tiles = Object.keys(SERVICE_META).map((s) => ({
     title: SERVICE_META[s].name,
     desc: SERVICE_META[s].line,
     art: SERVICE_META[s].art,
-    href: s === 'voice-ai' ? '/products/donna-ai' : `/services/${s}`,
+    href: `/services/${s}`,
   }));
 
   return (
@@ -61,10 +60,10 @@ export default function HyderabadPage() {
         label="Hyderabad · HITEC City"
         title={
           <>
-            Software &amp; AI, <em>built in Hyderabad.</em>
+            Custom software &amp; AI, <em>built in Hyderabad.</em>
           </>
         }
-        lede="Our team works from HITEC City, serving local businesses and clients worldwide."
+        lede="We work from HITEC City with businesses across Hyderabad, and clients further afield."
         art="globe"
       >
         <ButtonLink href="/contact?service=Hyderabad%20Consultation">
@@ -84,7 +83,7 @@ export default function HyderabadPage() {
       </div>
 
       <Section label="What we build here">
-        <Tiles items={tiles} cols={2} />
+        <Tiles items={tiles} cols={3} />
       </Section>
 
       <ClosingCTA

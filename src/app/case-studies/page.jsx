@@ -6,9 +6,9 @@ import { CASE_STUDIES_DATA, SITE_URL } from '@/lib/seoData';
 import { SERVICE_META } from '@/lib/visuals';
 
 export const metadata = pageMetadata({
-  title: 'Case Studies & Engineering Architecture | Relient Solutions',
+  title: 'Case Studies: Real Estate CRM & Agency Client Portal | Relient Solutions',
   description:
-    'Explore real engineering case studies: healthcare scheduling systems, high-speed POS ERP ledgers, Donna AI telephony voice agents, and supply chain portals.',
+    'Custom software we have built: a custom CRM for Amacs India (real estate, Mysuru), and a client portal for agencies. The same approach works for any business.',
   path: '/case-studies',
 });
 
@@ -17,9 +17,9 @@ const crumbs = [{ label: 'Case Studies', path: '/case-studies' }];
 const pageSchema = {
   '@type': 'WebPage',
   '@id': `${SITE_URL}/case-studies#webpage`,
-  name: 'Relient Solutions Case Studies & Engineering Architecture',
+  name: 'Relient Solutions Case Studies',
   description:
-    'Practical engineering case studies: smart healthcare booking portals, distributed warehouse ERP billing ledgers, Donna AI voice agents, and supply chain automation.',
+    'A custom real estate CRM and an agency client portal.',
   isPartOf: { '@id': `${SITE_URL}/#website` },
 };
 
@@ -32,10 +32,10 @@ export default function CaseStudiesPage() {
         label="Our work"
         title={
           <>
-            Real problems. <em>Real results.</em>
+            Real problems. <em>Real systems.</em>
           </>
         }
-        lede="A few systems we've built, and what changed for the business."
+        lede="What we've built, and the problems behind it. Different industries, same idea: one system instead of many tools."
         art="server"
       />
 
@@ -44,7 +44,9 @@ export default function CaseStudiesPage() {
           {CASE_STUDIES_DATA.map((cs) => (
             <article className="card case" key={cs.slug} id={cs.slug}>
               <div>
-                <span className="label">{cs.industry}</span>
+                <span className="label">
+                  {cs.industry} · {cs.status}
+                </span>
                 <h3>{cs.title}</h3>
                 <div className="client">{cs.client}</div>
               </div>
@@ -55,6 +57,9 @@ export default function CaseStudiesPage() {
                 <span className="label">What we built</span>
                 <p>{cs.solution}</p>
                 <div className="btn-row" style={{ gap: 18 }}>
+                  <Link href={`/case-studies/${cs.slug}`} className="text-link">
+                    Read the case study <ArrowRight size={13} />
+                  </Link>
                   {cs.relatedServices
                     .filter((s) => SERVICE_META[s])
                     .map((s) => (

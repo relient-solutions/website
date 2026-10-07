@@ -7,11 +7,10 @@ import { ArrowRight, Menu, X } from 'lucide-react';
 import BrandMark from '@/components/BrandMark';
 
 const LINKS = [
-  { name: 'Services', href: '/services' },
-  { name: 'Donna AI', href: '/products/donna-ai' },
-  { name: 'Industries', href: '/industries' },
-  { name: 'Work', href: '/case-studies' },
-  { name: 'Pricing', href: '/pricing' },
+  { name: 'Custom Software', href: '/services/custom-software' },
+  { name: 'AI Agents', href: '/services/ai-agents' },
+  { name: 'Automation', href: '/services/ai-automation' },
+  { name: 'Case Studies', href: '/case-studies' },
   { name: 'About', href: '/about' },
 ];
 
@@ -25,7 +24,8 @@ export default function Navbar() {
       <div className="wrap nav-inner">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
           <BrandMark />
-          Relient
+          <span className="brand-name">Relient</span>
+          <span className="brand-sub">Solutions</span>
         </Link>
 
         <nav className="nav-links" aria-label="Main">

@@ -1,55 +1,61 @@
 import Link from 'next/link';
-import { ArrowRight, Globe, Smartphone, Layers, Cpu, Workflow, PhoneCall } from 'lucide-react';
-import { PageHero, Section, Stats, Tiles, Steps, ButtonLink, ClosingCTA, Render } from '@/components/ui';
+import { ArrowRight, Layers, Bot, Workflow } from 'lucide-react';
+import { PageHero, Section, Stats, Tiles, Checks, Steps, ButtonLink, ClosingCTA, Render } from '@/components/ui';
 import { pageMetadata } from '@/lib/seo';
+import { SERVICE_META } from '@/lib/visuals';
+import { CASE_STUDIES_DATA } from '@/lib/seoData';
 
 export const metadata = pageMetadata({
-  title: 'Relient — Build. Automate. Grow. | Custom Software, AI & Voice Agents',
+  title: 'Relient — Custom Software, AI Agents & Workflow Automation',
   description:
-    'From websites and mobile apps to custom software, enterprise ERPs, and Donna AI telephony voice agents — Relient helps businesses turn operational bottlenecks into high-performance software.',
+    'Relient builds custom software, AI agents and workflow automation for growing businesses. One system instead of spreadsheets, WhatsApp and SaaS tools — built around how you work, owned by you.',
   path: '/',
 });
 
 const OFFER = [
-  { label: 'Websites', icon: Globe },
-  { label: 'Mobile Apps', icon: Smartphone },
-  { label: 'Business Software', icon: Layers },
-  { label: 'AI', icon: Cpu },
-  { label: 'Automation', icon: Workflow },
-  { label: 'Voice Agents', icon: PhoneCall },
+  { label: 'Custom Software', icon: Layers },
+  { label: 'AI Agents', icon: Bot },
+  { label: 'Workflow Automation', icon: Workflow },
 ];
 
-const SERVICES = [
-  { title: 'Websites', desc: 'Fast websites and customer portals.', art: 'browser', href: '/services/web-development' },
-  { title: 'Business Software', desc: 'Billing, inventory and ERP built for you.', art: 'modules', href: '/services/custom-software' },
-  { title: 'AI & Automation', desc: 'AI tools and workflows that save hours.', art: 'gears', href: '/services/ai-automation' },
+const SERVICES = Object.entries(SERVICE_META).map(([slug, m]) => ({
+  title: m.name,
+  desc: m.line,
+  art: m.art,
+  href: `/services/${slug}`,
+}));
+
+const PAINS = [
+  'Work spread across Excel, WhatsApp, email and five different apps',
+  'Follow-ups and reminders that depend on someone remembering',
+  'Staff copy-pasting the same data between tools',
+  'Paying per user for software your team only half uses',
 ];
 
-const RESULTS = [
-  { value: '40%', label: 'fewer missed appointments' },
-  { value: '10×', label: 'faster billing' },
-  { value: '85%', label: 'calls solved first time' },
-  { value: '100%', label: 'code ownership for clients' },
+const PROMISES = [
+  { value: '1', label: 'system instead of many tools' },
+  { value: 'Weekly', label: 'demos of working software' },
+  { value: '100%', label: 'code and data ownership' },
 ];
 
 const STEPS = [
-  { title: 'Talk', desc: 'A free call to understand your problem.' },
-  { title: 'Plan', desc: 'A clear scope and fixed price.' },
-  { title: 'Build', desc: 'Weekly demos as we build.' },
-  { title: 'Launch', desc: 'Go live, with support after.' },
+  { title: 'Talk', desc: 'A free call to map how your team works today.' },
+  { title: 'Scope', desc: 'A clear plan and a fixed quote.' },
+  { title: 'Build', desc: 'Working software to review every week.' },
+  { title: 'Launch', desc: 'Your data moved in, team trained, support after.' },
 ];
 
 export default function HomePage() {
   return (
     <>
       <PageHero
-        label="Software & AI studio · Hyderabad"
+        label="Custom software & AI · Hyderabad"
         title={
           <>
-            We build the software your business <em>runs on.</em>
+            Software built around <em>how you work.</em>
           </>
         }
-        lede="Websites, apps, business software and AI — designed, built and supported by one team."
+        lede="We build custom software, AI agents and automation for growing businesses — so you run on one system instead of spreadsheets, WhatsApp and tools that don't fit. You own all of it."
         art="stack"
       >
         <div className="btn-row">
@@ -70,19 +76,30 @@ export default function HomePage() {
       </PageHero>
 
       <div className="wrap" style={{ paddingBottom: 40 }}>
-        <Stats items={RESULTS} />
+        <Stats items={PROMISES} cols={3} />
       </div>
 
       <Section
-        label="What we do"
+        label="Sound familiar?"
         title={
           <>
-            Three things, <em>done well.</em>
+            Too many tools, <em>not one system.</em>
+          </>
+        }
+      >
+        <Checks items={PAINS} />
+      </Section>
+
+      <Section
+        label="What we build"
+        title={
+          <>
+            Three parts, <em>one system.</em>
           </>
         }
         action={
           <Link href="/services" className="text-link">
-            All services <ArrowRight size={14} />
+            How it fits together <ArrowRight size={14} />
           </Link>
         }
       >
@@ -92,16 +109,29 @@ export default function HomePage() {
       <section className="section">
         <div className="wrap split">
           <div style={{ maxWidth: 460 }}>
-            <Render name="voice" alt="Donna AI voice agent" />
+            <Render name="server" alt="Custom CRM and client portal" />
           </div>
           <div>
-            <div className="label">Our product</div>
+            <div className="label">Our work</div>
             <h2>
-              Donna answers <em>every call.</em>
+              Built for <em>real teams.</em>
             </h2>
-            <p className="lede">An AI receptionist for your phone line. She answers, books appointments and sends you a summary — 24/7.</p>
-            <ButtonLink ghost href="/products/donna-ai">
-              Meet Donna <ArrowRight size={16} />
+            <p className="lede">Different industries, same problem: too many tools, not one system.</p>
+            <ul className="checks" style={{ marginBottom: 24 }}>
+              {CASE_STUDIES_DATA.map((cs) => (
+                <li key={cs.slug}>
+                  <ArrowRight size={16} />
+                  <span>
+                    <Link href={`/case-studies/${cs.slug}`} className="text-link">
+                      {cs.title}
+                    </Link>{' '}
+                    — {cs.summary}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <ButtonLink ghost href="/case-studies">
+              All case studies <ArrowRight size={16} />
             </ButtonLink>
           </div>
         </div>

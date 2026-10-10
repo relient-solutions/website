@@ -3,40 +3,21 @@
 # https://relient.solutions
 # ==============================================================================
 
+# Crawlers obey only the most specific group that names them, so the search
+# engine & AI crawlers share one group with the default rules.
 User-agent: *
-Allow: /
-Disallow: /api/
-
-# Dedicated Search Engine & AI Crawler Directives
 User-agent: Googlebot
-Allow: /
-
 User-agent: Bingbot
-Allow: /
-
 User-agent: Applebot
-Allow: /
-
 User-agent: GPTBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
 User-agent: ClaudeBot
-Allow: /
-
 User-agent: Claude-Web
-Allow: /
-
 User-agent: PerplexityBot
-Allow: /
-
 User-agent: Cohere-ai
-Allow: /
-
 User-agent: Google-Extended
 Allow: /
+Disallow: /api/
 
 # Canonical Sitemap Declaration
 Sitemap: https://relient.solutions/sitemap.xml

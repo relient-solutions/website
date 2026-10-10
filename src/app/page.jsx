@@ -64,11 +64,7 @@ const homeSchema = [
       })),
     },
   },
-  {
-    '@type': 'FAQPage',
-    '@id': `${SITE_URL}/#faq`,
-    mainEntity: HOME_FAQS.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
-  },
+  // No FAQPage here: these questions are marked up once, on /faq, as Google asks for repeated FAQs.
 ];
 
 const STEPS = [

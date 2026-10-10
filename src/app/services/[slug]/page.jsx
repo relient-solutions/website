@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { PageHero, Section, Stats, Checks, Tiles, Faq, ButtonLink, ClosingCTA, JsonLd } from '@/components/ui';
 import { pageMetadata, breadcrumbSchema } from '@/lib/seo';
-import { SERVICES_DATA, SITE_URL, BRAND_PHONE_INTL } from '@/lib/seoData';
+import { SERVICES_DATA, CASE_STUDIES_DATA, SITE_URL, BRAND_PHONE_INTL } from '@/lib/seoData';
 import { SERVICE_META } from '@/lib/visuals';
 
 export const dynamicParams = false;
@@ -52,6 +52,14 @@ export default async function ServiceDetailPage({ params }) {
   const related = service.relatedServices
     .filter((s) => SERVICE_META[s])
     .map((s) => ({ title: SERVICE_META[s].name, desc: SERVICE_META[s].line, art: SERVICE_META[s].art, href: `/services/${s}` }));
+
+  const caseStudies = CASE_STUDIES_DATA.filter((cs) => cs.relatedServices.includes(slug)).map((cs) => ({
+    kicker: cs.industry,
+    title: cs.title,
+    desc: cs.summary,
+    href: `/case-studies/${cs.slug}`,
+    cta: 'Read the case study',
+  }));
 
   const whatsapp = `https://wa.me/${BRAND_PHONE_INTL.replace('+', '')}?text=${encodeURIComponent(`Hi Relient team, I am interested in ${service.title}.`)}`;
 
@@ -116,6 +124,12 @@ export default async function ServiceDetailPage({ params }) {
       >
         <Faq items={service.faqs} />
       </Section>
+
+      {caseStudies.length > 0 && (
+        <Section label="In practice">
+          <Tiles items={caseStudies} cols={caseStudies.length} />
+        </Section>
+      )}
 
       {related.length > 0 && (
         <Section label="Often paired with">
